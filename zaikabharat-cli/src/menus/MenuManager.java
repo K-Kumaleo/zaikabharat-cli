@@ -16,7 +16,8 @@ public class MenuManager {
             System.out.println("\n===== Welcome to ZaikaBharat CLI =====");
             System.out.println("1. Browse Recipes");
             System.out.println("2. Browse by Categories");
-            System.out.println("3. Exit");
+            System.out.println("3. My Fridge (Find Recipes by Ingredients)");
+            System.out.println("4. Exit");
             System.out.print("Choose an option: ");
 
             int choice = InputHelper.readInt();
@@ -31,6 +32,10 @@ public class MenuManager {
                     categoriesManager.start();
                     break;
                 case 3:
+                    FridgeManager fridgeManager = new FridgeManager(recipeManager);
+                    fridgeManager.start();
+                    break;
+                case 4:
                     System.out.println("Thank you for visiting ZaikaBharat. Goodbye!");
                     System.exit(0);
                 default:
@@ -38,5 +43,6 @@ public class MenuManager {
             }
         }
     }
+
 
 }
